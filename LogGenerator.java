@@ -8,15 +8,20 @@ import java.util.ArrayList;
 
 public class LogGenerator{
 
+    private List<UserNode> users = new ArrayList<UserNode>();
+
+
 
     public static void main(String[] args) {
 
-        String csvFile = "../r1/LDAP/2010-04.csv";
+    }
+
+
+    public static void initializeUsers(String csvFile) {
+
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ",";
-
-        List<UserNode> users = new ArrayList<UserNode>();
         UserEntry userEntry;
 
         try {
@@ -49,7 +54,7 @@ public class LogGenerator{
         }
 
 
-        ActivityEntry search = new ActivityEntry("{X4L7-R1QF61WA-2063JYMZ}","01/04/2010 13:50:57","DTAA/SML0086","PC-1586","http://pagesex.com");
+        ActivityEntry search = new ActivityEntry("{A3U1-F3GA48SC-7481SKGQ}","01/04/2010 13:37:47","DTAA/AAA0371","PC-1689","http://espn.go.com");
         if(users.get(84).contains(search)){
             users.get(84).show();
         }
