@@ -6,19 +6,25 @@ import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
 
-public class LogGenerator{
+public class Tree{
 
     private List<UserNode> users = new ArrayList<UserNode>();
 
 
 
-    public static void main(String[] args) {
+    public Tree () {
+        
+        String userFile = "../r1/LDAP/2010-04.csv";
 
+        initializeUsers(userFile);
+
+        searchEntry();
     }
 
 
-    public static void initializeUsers(String csvFile) {
+    private void initializeUsers(String csvFile) {
 
+        
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ",";
@@ -53,12 +59,15 @@ public class LogGenerator{
             }
         }
 
+    }
 
-        ActivityEntry search = new ActivityEntry("{A3U1-F3GA48SC-7481SKGQ}","01/04/2010 13:37:47","DTAA/AAA0371","PC-1689","http://espn.go.com");
-        if(users.get(84).contains(search)){
-            users.get(84).show();
+    private void searchEntry(){
+        ActivityEntry search = new ActivityEntry("{F1C5-I5CN19JK-9863ZHWX}","01/04/2010 13:45:58","DTAA/QGM0222","PC-1214","http://espn.go.com");
+        for(int i = 0; i < users.size(); i++){
+            if(users.get(i).contains(search)){
+                users.get(i).show();
+            }
         }
-
     }
 
 }
