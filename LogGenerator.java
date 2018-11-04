@@ -3,6 +3,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class LogGenerator{
 
 
@@ -13,7 +16,8 @@ public class LogGenerator{
         String line = "";
         String cvsSplitBy = ",";
 
-        Node activityEntry;
+        List<UserNode> users = new ArrayList<UserNode>();
+        UserEntry userEntry;
 
         try {
 
@@ -23,9 +27,10 @@ public class LogGenerator{
                 // use comma as separator
                 String[] logEntry = line.split(cvsSplitBy);
 
-                activityEntry = new Node(logEntry[0], logEntry[1], logEntry[2], logEntry[3], logEntry[4]);
+                userEntry = new UserEntry(logEntry[0], logEntry[1], logEntry[2], logEntry[3], logEntry[4]);
 
-                System.out.println( activityEntry.getEmail() );
+
+                users.add(new UserNode(userEntry));
 
             }
             
@@ -41,6 +46,11 @@ public class LogGenerator{
                     e.printStackTrace();
                 }
             }
+        }
+
+
+        for(int i = 0; i < users.size(); i++) {
+            users.get(i).show();
         }
 
     }

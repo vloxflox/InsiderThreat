@@ -4,7 +4,7 @@ public class UserEntry{
     private String user_id;
     private String domain;
     private String email;
-    private String activity;
+    private String role;
 
     public UserEntry(String employee_name,String user_id,String domain,String email,String role){
         this.employee_name = employee_name;
