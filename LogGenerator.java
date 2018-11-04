@@ -11,7 +11,7 @@ public class LogGenerator{
 
     public static void main(String[] args) {
 
-        String csvFile = "./r1/LDAP/2010-04.csv";
+        String csvFile = "../r1/LDAP/2010-04.csv";
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ",";
@@ -49,8 +49,9 @@ public class LogGenerator{
         }
 
 
-        for(int i = 0; i < users.size(); i++) {
-            users.get(i).show();
+        ActivityEntry search = new ActivityEntry("{X4L7-R1QF61WA-2063JYMZ}","01/04/2010 13:50:57","DTAA/SML0086","PC-1586","http://pagesex.com");
+        if(users.get(84).contains(search)){
+            users.get(84).show();
         }
 
     }

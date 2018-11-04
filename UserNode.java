@@ -12,9 +12,20 @@ public class UserNode{
         //child    = new ArrayList<Node>();
     }
 
-    public boolean belongs(ActivityEntry activityEntry){
-        return userInfo.belongs(activityEntry);
+    public boolean contains(ActivityEntry activityEntry){
+        return userInfo.contains(activityEntry);
     }
+
+
+    public UserNode find_son(ActivityEntry activityEntry){
+        for(int i = 0; i < child.size(); i++) {
+            if(child.get(i).contains(activityEntry)){
+                return child.get(i);
+            }
+        }
+        return null;
+    }
+
 
     public void show(){
         userInfo.show();

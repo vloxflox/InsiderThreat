@@ -16,11 +16,12 @@ public class UserInfo{
 
 
     //verifica se a activity entry se refere ao usuário procurado
-    public boolean belongs(ActivityEntry activityEntry){
+    public boolean contains(ActivityEntry activityEntry){
         //placeHolder todos do T1 têm prefixo DTAA/
-        String userCode = "DTAA/" + activityEntry.getUser();
-        return userCode.equals(user_id);
+        String userCode = "DTAA/" + user_id;
+        return userCode.equals(activityEntry.getUser());
     }
+
 
     public void show(){
         System.out.println("Nome do funcionário:    " + employee_name);
