@@ -7,10 +7,10 @@ public class ActivityEntry{
     private String activity;
 
     public ActivityEntry(String id,String date,String user,String pc,String activity){
-        this.id = id;
-        this.date = date;
-        this.user = user;
-        this.pc = pc;
+        this.id       = id;
+        this.date     = date;
+        this.user     = user;
+        this.pc       = pc;
         this.activity = activity;
     }
 

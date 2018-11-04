@@ -8,12 +8,12 @@ public class LogGenerator{
 
     public static void main(String[] args) {
 
-        String csvFile = "./r1/device.csv";
+        String csvFile = "./r1/LDAP/2010-04.csv";
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ",";
 
-        ActivityEntry activityEntry;
+        Node activityEntry;
 
         try {
 
@@ -23,9 +23,9 @@ public class LogGenerator{
                 // use comma as separator
                 String[] logEntry = line.split(cvsSplitBy);
 
-                activityEntry = new ActivityEntry(logEntry[0], logEntry[1], logEntry[2], logEntry[3], logEntry[4]);
+                activityEntry = new Node(logEntry[0], logEntry[1], logEntry[2], logEntry[3], logEntry[4]);
 
-                System.out.println( activityEntry.getDate() );
+                System.out.println( activityEntry.getEmail() );
 
             }
             
