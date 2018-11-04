@@ -1,4 +1,4 @@
-public class ActivityEntry{
+public class ActivityEntry extends Entry{
 
     private String id;
     private String date;

@@ -1,4 +1,4 @@
-public class UserInfo{
+public class UserInfo extends Info{
 
     private String employee_name;
     private String user_id;

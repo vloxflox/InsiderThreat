@@ -1,4 +1,4 @@
-public class UserEntry{
+public class UserEntry extends Entry{
 
     private String employee_name;
     private String user_id;
